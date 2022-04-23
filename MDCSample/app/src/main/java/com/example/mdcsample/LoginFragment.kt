@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputEditText
 
 
@@ -26,7 +27,7 @@ class LoginFragment : Fragment() {
                 text.error = getString(R.string.password_error)
             }else{
                 text.error = null
-
+                findNavController().navigate(R.id.action_loginFragment_to_productGridFragment)
             }
         }
 
