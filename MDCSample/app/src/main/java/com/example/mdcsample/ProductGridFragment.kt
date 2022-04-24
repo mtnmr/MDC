@@ -13,9 +13,14 @@ import com.example.mdcsample.model.ProductEntry
 //        val title: String, dynamicUrl: String, val url: String, val price: String, val description: String) {
 //    val dynamicUrl: Uri = Uri.parse(dynamicUrl)
 
-val sampleA = ProductEntry("title", "url", "url", "10", "description")
-val sampleB = ProductEntry("title", "url", "url", "10", "description")
-val products:List<ProductEntry> = listOf(sampleA, sampleB)
+val sampleA = ProductEntry("sampleA", "url", "url", "10", "description")
+val sampleB = ProductEntry("sampleB", "url", "url", "10", "description")
+val sampleC = ProductEntry("sampleC", "url", "url", "10", "description")
+val sampleD = ProductEntry("sampleD", "url", "url", "10", "description")
+val sampleE = ProductEntry("sampleE", "url", "url", "10", "description")
+val sampleF = ProductEntry("sampleF", "url", "url", "10", "description")
+
+val products:List<ProductEntry> = listOf(sampleA, sampleB, sampleC, sampleD, sampleE, sampleF)
 
 class ProductGridFragment : Fragment() {
 
