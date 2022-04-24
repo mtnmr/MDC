@@ -4,8 +4,23 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.mdcsample.databinding.FragmentProductGridBinding
+import com.example.mdcsample.model.ProductEntry
+
+//class ProductEntry(
+//        val title: String, dynamicUrl: String, val url: String, val price: String, val description: String) {
+//    val dynamicUrl: Uri = Uri.parse(dynamicUrl)
+
+val sampleA = ProductEntry("title", "url", "url", "10", "description")
+val sampleB = ProductEntry("title", "url", "url", "10", "description")
+val products:List<ProductEntry> = listOf(sampleA, sampleB)
 
 class ProductGridFragment : Fragment() {
+
+    private var _binding: FragmentProductGridBinding ?= null
+    private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,9 +31,24 @@ class ProductGridFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_product_grid, container, false)
 
+        _binding = FragmentProductGridBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+
+        //app_bar
         (activity as AppCompatActivity).setSupportActionBar(view.findViewById(R.id.app_bar))
+
+        //recyclerview
+        binding.recyclerView.setHasFixedSize(true)
+        binding.recyclerView.layoutManager = GridLayoutManager(context, 2, RecyclerView.VERTICAL, false)
+        val adapter = ProductCardRecyclerViewAdapter(products)
+        binding.recyclerView.adapter = adapter
+
+        val largePadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing)
+        val smallPadding = resources.getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small)
+        binding.recyclerView.addItemDecoration(ProductGridItemDecoration(largePadding, smallPadding))
+
 
         return view
     }
@@ -28,4 +58,9 @@ class ProductGridFragment : Fragment() {
         super.onCreateOptionsMenu(menu, inflater)
     }
 
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
