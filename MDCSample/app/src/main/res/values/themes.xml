@@ -18,7 +18,7 @@
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
     </style>
 
-
+<!--    テーマの色変更-->
     <style name="Theme.MDCSample.Autumn" parent="Theme.MDCSample">
         <item name="colorPrimary">#FFCF44</item>
         <item name="colorPrimaryDark">#FD9725</item>
@@ -45,9 +45,9 @@
     <style name="Widget.MDCSample.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.MDCSample.TextInputLayout.HintText</item>
         <item name="android:paddingBottom">8dp</item>
-<!--        <item name="hintTextColor">@color/textColorPrimary</item>-->
-<!--        <item name="boxStrokeColor">@color/textInputOutlineColor</item>-->
-        <item name="android:textColorHint">?attr/colorPrimaryDark</item>
+        <item name="hintTextColor">@color/textColorPrimary</item>
+        <item name="boxStrokeColor">@color/textInputOutlineColor</item>
+<!--        <item name="android:textColorHint">?attr/colorPrimaryDark</item>-->
     </style>
 
     <style name="TextAppearance.MDCSample.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
@@ -65,5 +65,10 @@
 <!--    キャンセルボタンはテキストの色だけ変更したい-->
     <style name="Widget.MDCSample.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+
+    <style name="Widget.MDCSample.Backdrop" parent="">
+        <item name="android:background">?attr/colorAccent</item>
     </style>
 </resources>

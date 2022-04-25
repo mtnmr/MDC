@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MDCSample.Autumn">
+        android:theme="@style/Theme.MDCSample">
+<!--        テーマの色変更は↑を変える-->
         <activity
             android:name=".MainActivity"
             android:exported="true">
