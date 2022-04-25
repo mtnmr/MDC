@@ -6,6 +6,7 @@ import android.view.*
 import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mdcsample.databinding.FragmentProductGridBinding
@@ -48,7 +49,14 @@ class ProductGridFragment : Fragment() {
         (activity as AppCompatActivity).setSupportActionBar(binding.appBar)
         //メニューボタンのクリックで手前の図形が下にスライドする動きを追加
 //        binding.appBar.setNavigationOnClickListener(NavigationIconClickListener(requireActivity(), binding.productGrid))
-        binding.appBar.setNavigationOnClickListener(NavigationIconClickListener(requireActivity(), binding.productGrid, AccelerateDecelerateInterpolator()))
+        binding.appBar.setNavigationOnClickListener(NavigationIconClickListener(
+            requireActivity(),
+            binding.productGrid,
+            AccelerateDecelerateInterpolator(),
+            ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_menu_24), // Menu open icon
+            ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_clear_24)
+            )
+        )
 
         //recyclerview
         binding.recyclerView.setHasFixedSize(true)
