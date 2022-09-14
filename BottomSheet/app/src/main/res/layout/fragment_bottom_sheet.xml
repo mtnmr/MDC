@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BottomSheetFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BottomSheetFragment"
+    android:padding="8dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/layout_edit"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:text="edit"
+        app:drawableLeftCompat="@drawable/ic_baseline_edit_24"
+        android:drawablePadding="4dp"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/layout_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_edit"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:text="delete"
+        app:drawableLeftCompat="@drawable/ic_baseline_delete_24"
+        android:drawablePadding="4dp"/>
+
+    <TextView
+        android:id="@+id/layout_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_delete"
+        android:padding="8dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:text="add"
+        app:drawableLeftCompat="@drawable/ic_baseline_add_24"
+        android:drawablePadding="4dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
