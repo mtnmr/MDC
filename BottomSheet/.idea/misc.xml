@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_icecream_24.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.37681159420289856" />
         <entry key="app/src/main/res/layout/activity_persistent_bottom_sheet.xml" value="0.27764127764127766" />
         <entry key="app/src/main/res/layout/fragment_bottom_sheet.xml" value="0.375" />
