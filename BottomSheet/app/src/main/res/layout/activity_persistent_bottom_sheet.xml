@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context=".PersistentBottomSheetActivity">
+
+    <Button
+        android:id="@+id/buttonBottomSheetPersistent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:text="Open Persistent Bottom Sheet" />
+
+    <LinearLayout
+        android:id="@+id/persistent_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="30dp">
+
+        <TextView
+            android:id="@+id/icecream"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:text="IceCream"
+            app:drawableLeftCompat="@drawable/ic_baseline_icecream_24"
+            android:drawablePadding="4dp"/>
+
+        <TextView
+            android:id="@+id/cake"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:text="Cake"
+            app:drawableLeftCompat="@drawable/ic_baseline_cake_24"
+            android:drawablePadding="4dp"/>
+
+        <TextView
+            android:id="@+id/cookie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:textStyle="bold"
+            android:text="Cookie"
+            app:drawableLeftCompat="@drawable/ic_round_cookie_24"
+            android:drawablePadding="4dp"/>
+
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
