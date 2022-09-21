@@ -19,7 +19,12 @@ class MainActivity : AppCompatActivity() {
             bottomSheetFragment.show(supportFragmentManager, BottomSheetFragment.TAG)
 
             //behaviorの属性を追加するのに使う
-            val modalBottomSheetBehavior = (bottomSheetFragment.dialog as BottomSheetDialog).behavior
+            /*
+            asに？がないと、
+            null cannot be cast to non-null type com.google.android.material.bottomsheet.BottomSheetDialog
+            が出てアプリが落ちた。
+             */
+            val modalBottomSheetBehavior = (bottomSheetFragment.dialog as? BottomSheetDialog)?.behavior
         }
     }
 }
